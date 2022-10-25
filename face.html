@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Shinchan Face</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <style>
+        :root {
+  --skin_color: rgba(255, 199, 135, 1);
+}
+
+html {
+  min.height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: rgba(134, 189, 201, 0.64);
+}
+
+.container {
+  height: 350px;
+  width: 400px;
+  /* background: rgb(179, 231, 1); */
+  /* top: 50%; */
+  /* position: absolute; */
+  margin: auto;
+  margin-top: 180px;
+  /* left: 50%; */
+}
+
+.hairs {
+  width: 240px;
+  height: 120px;
+  background: rgb(0, 0, 0);
+  border-top-left-radius: 70%;
+  border-top-right-radius: 40%;
+  border-bottom-left-radius: 25%;
+  /* border-bottom-right-radius: 50%; */
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 30px;
+  box-shadow: -1px -1px 2px rgb(34, 33, 34);
+}
+
+.behind_ears_hairs {
+  width: 125px;
+  height: 65px;
+  background: rgb(0, 0, 0);
+  border-top-left-radius: 65%;
+  border-top-right-radius: 40%;
+  border-bottom-left-radius: 25%;
+  /* border-bottom-right-radius: 50%; */
+  position: absolute;
+  margin-left: -41px;
+  margin-top: 56px;
+  transform: rotate(-57deg);
+  box-shadow: -1px -1px 2px rgb(34, 33, 34);
+}
+
+.upper_face {
+  width: 249px;
+  height: 149px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 55%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 43%;
+  margin-left: 13px;
+  border-right: 2px solid rgb(0, 0, 0);
+  margin-top: 9px;
+  background: var(--skin_color);
+  transform: rotate(-5deg);
+}
+
+.eyebrow_container {
+  width: 40%;
+  height: 40%;
+  /* background: rgb(235, 27, 0); */
+  position: absolute;
+  margin-top: -100px;
+  float: left;
+  margin-left: -4px;
+  transform: rotate(3deg);
+}
+
+.eyebrow_container_2 {
+  width: 40%;
+  height: 40%;
+  /* background: rgb(0, 80, 235); */
+  position: absolute;
+  margin-top: -100px;
+  float: left;
+  margin-left: 118px;
+  transform: rotate(3deg);
+}
+
+.left_angle_brow {
+  width: 73px;
+  height: 37%;
+  box-shadow: -1px -1px 2px rgb(34, 33, 34);
+  transform: rotate(-41deg);
+  margin-top: 25px;
+  float: left;
+  border-radius: 15px;
+  background: rgb(0, 0, 0);
+}
+
+.right_angle_brow {
+  width: 72px;
+  height: 35%;
+  transform: rotate(41deg);
+  box-shadow: -0px -1px 2px rgb(34, 33, 34);
+  margin-top: 25px;
+  margin-left: 35px;
+  border-radius: 15px;
+  background: rgb(0, 0, 0);
+}
+
+.space_for_eyes {
+  width: 85px;
+  height: 60px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 55%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 43%;
+  border-radius: 100%;
+  margin-left: 20px;
+  border-top: 4px solid rgb(0, 0, 0);
+  margin-top: -25px;
+  /* background: var(--skin_color); */
+  transform: rotate(-1deg);
+  float: left;
+}
+
+.eye_balls {
+  width: 68px;
+  height: 62px;
+  /* border-top-left-radius: 50%;
+  border-top-right-radius:55%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 43%; */
+  border-radius: 100%;
+  margin-left: 30px;
+  border-right: 1.5px solid rgb(0, 0, 0);
+  margin-top: -38px;
+  background: rgb(4, 4, 4);
+  transform: rotate(-5deg);
+  float: left;
+}
+
+.cornea {
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+  background: rgb(255, 255, 255);
+  margin-left: 18.5px;
+  margin-top: 14px;
+}
+
+.lower_face {
+  width: 273px;
+  height: 178px;
+  /* border-top-left-radius: 45%; */
+  border-top-right-radius: 55%;
+  border-bottom-left-radius: 58%;
+  border-bottom-right-radius: 35%;
+  margin-left: 25px;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-left: 2px solid rgb(0, 0, 0);
+  border-bottom: 0.5px solid rgb(0, 0, 0);
+  margin-top: -79px;
+  background: var(--skin_color);
+  transform: rotate(-4deg);
+  position: absolute;
+}
+
+.border_cover {
+  width: 236px;
+  height: 150px;
+  background-color: var(--skin_color);
+  /* background: rgb(233, 26, 133); */
+  /* border: 1px solid rgb(23, 27, 24); */
+  border-radius: 65px;
+  margin-left: -12px;
+  margin-top: -50px;
+  padding-left: 13px;
+}
+
+.ear {
+  width: 89px;
+  height: 85px;
+  border-top-left-radius: 55%;
+  border-top-right-radius: 60%;
+  border-bottom-left-radius: 70%;
+  border-bottom-right-radius: 60%;
+  margin-left: -75px;
+  border-left: 2px solid rgb(0, 0, 0);
+  border-bottom: 1.5px solid rgb(0, 0, 0);
+  margin-top: 15px;
+  background: var(--skin_color);
+  transform: rotate(39deg);
+  position: absolute;
+}
+
+.ear_curve {
+  width: 55px;
+  height: 55px;
+  border-top-left-radius: 55%;
+  border-top-right-radius: 60%;
+  border-bottom-left-radius: 70%;
+  border-bottom-right-radius: 60%;
+  /* background: rgb(0, 255, 25); */
+  border-left: 1px solid rgba(227, 157, 101, 0.66);
+  margin-top: 10px;
+  margin-left: 15px;
+  transform: rotate(-35deg);
+}
+
+.mouth {
+  width: 39px;
+  height: 23px;
+  background: rgb(168, 35, 75);
+  border-radius: 100%;
+  border: 1px solid rgb(0, 0, 0);
+  margin-top: 40px;
+  margin-left: 118px;
+  transform: rotate(2deg);
+}
+
+    </style>
+    <div class="container">
+
+      <div class="hairs">
+
+        <div class="behind_ears_hairs">
+        </div>
+
+        <div class="upper_face">
+
+        </div>
+        <div class="lower_face">
+
+          <div class="ear">
+            <div class="ear_curve">
+
+            </div>
+          </div>
+
+          <div class="eyebrow_container">
+            <div class="left_angle_brow">
+
+            </div>
+            <div class="right_angle_brow">
+
+            </div>
+          </div>
+
+          <div class="eyebrow_container_2">
+            <div class="left_angle_brow">
+
+            </div>
+            <div class="right_angle_brow">
+
+            </div>
+          </div>
+
+          <div class="space_for_eyes">
+          </div>
+          <div class="space_for_eyes">
+          </div>
+
+          <div class="border_cover">
+
+            <div class="eye_balls">
+              <div class="cornea">
+
+              </div>
+            </div>
+            <div class="eye_balls">
+              <div class="cornea">
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="mouth">
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>
