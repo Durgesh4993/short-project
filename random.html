@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content:center; 
+  height: 100vh;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+svg{
+  height: 100vh;
+  min-height: 400px;
+}
+
+#svgRight {
+  transform: scaleX(-1);
+}
+
+/* Before using SMIL, I used CSS animation to fade in the circles. The browser support was spotty, so I changed to SMIL. But for some reason, keeping this CSS animation here but commented out allows the codepen preview snapshot to animate */
+/* 
+circle{
+  animation: fadeIn 200ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+    </style>
+    <svg id="svgMain" viewBox="0 0 500 500" height="500" width="500" x="0" y="0" >
+        <defs>
+          <filter id="gloop" height="125%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation=15 result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 50 -20" result="goo" />
+          </filter>
+        </defs>
+        
+        <g id="svgGroup" filter="url(#gloop)"></g>
+      </svg>
+      
+      <svg id="svgRight" viewBox="0 0 500 500" height="500" width="500" x="0" y="0" >
+        <use href="#svgGroup"/>
+      </svg>
+      <script>
+        const body = document.body;
+const group = document.getElementById("svgGroup");
+ 
+
+// Instructions for making a circle
+function drawCircle() { 
+  // Make SVG circle
+  let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  circle.setAttribute("r", Math.floor(Math.random() * 60));
+  circle.setAttribute("cx", Math.floor(Math.random() * 500) + 150); 
+  circle.setAttribute("cy", Math.floor(Math.random() * 500));
+  circle.setAttribute("opacity", "1" );
+  circle.setAttribute("fill", "black");
+  
+  // Make SMIL animation
+  let animation = document.createElementNS("http://www.w3.org/2000/svg", "animate");
+  animation.setAttribute("attributeName", "opacity");
+  animation.setAttribute("from", "0"); 
+  animation.setAttribute("to", "1");
+  animation.setAttribute("fill", "freeze");
+  animation.setAttribute("dur", "200ms"); 
+ 
+  // Append animation to circle, append circle to g
+  circle.appendChild(animation);
+  group.appendChild(circle);
+  
+  // Begin animation
+  animation.beginElement();
+}
+
+// Draw a random circle every 5 milliseconds until limit is reached
+function drawRandom() { 
+  for (i = 0; i < 50; i++) {
+    setTimeout( function timer(){
+      drawCircle();
+    }, i*3 );
+  }
+}
+
+//Remove all SVG shapes from DOM
+function removeAll() {
+  while (group.firstChild) {
+    group.removeChild(group.lastChild);
+  }
+}
+
+//On click, remove all shapes and draw new shapes
+body.addEventListener("click", function(){
+  removeAll();
+  drawRandom();
+});
+
+//On page load, draw new shapes
+drawRandom();
+      </script>
+</body>
+</html>
